@@ -1,83 +1,1369 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+	<head>
+		<title>TechDay 2014</title>
+		<style>body {
+  /*width: 45em;*/
+  border: 1px solid #ddd;
+  /*outline: 1300px solid #fff;*/
+  /*margin: 16px auto;*/
+}
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+body .markdown-body
+{
+  padding: 30px;
+}
 
-    <title>Agenda by ibm-techday</title>
-  </head>
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
 
-  <body>
-    <header>
-      <div class="inner">
-        <h1>Agenda</h1>
-        <h2>Agenda do TechDay</h2>
-        <a href="https://github.com/ibm-techday/agenda" class="button"><small>View project on</small> GitHub</a>
-      </div>
-    </header>
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+.markdown-body a {
+  background: transparent;
+}
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+.markdown-body img {
+  border: 0;
+}
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+.markdown-body pre {
+  overflow: auto;
+}
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-        </section>
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
 
-        <aside id="sidebar">
-          <a href="https://github.com/ibm-techday/agenda/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/ibm-techday/agenda/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
+.markdown-body html input[disabled] {
+  cursor: default;
+}
 
-          <p class="repo-owner"><a href="https://github.com/ibm-techday/agenda"></a> is maintained by <a href="https://github.com/ibm-techday">ibm-techday</a>.</p>
+.markdown-body input {
+  line-height: normal;
+}
 
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
-    </div>
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
 
-  
-  </body>
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding: 0.5em 1em 0.5em 1em;
+  color: #888888;
+  background-color: #F7F7F7;
+  border: 1px solid #888888;
+}
+
+.markdown-body .admonition blockquote {
+  color: rgba(136, 136, 136, 0.5);
+  border-left: 4px solid rgba(136, 136, 136, 0.5);
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+  margin: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition-icon {
+  font: normal normal 16px fontawesome-mini;
+  line-height: 1.5;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  float: left;
+}
+
+.markdown-body .attention {
+  color: #4F8A10;
+  background-color: #DFF2BF;
+  border: 1px solid #4F8A10;
+}
+
+.markdown-body .caution {
+  color: #D63301;
+  background-color: #FFCCBA;
+  border: 1px solid #D63301;
+}
+
+.markdown-body .hint {
+  color: #00529B;
+  background-color: #BDE5F8;
+  border: 1px solid #00529B;
+}
+
+.markdown-body .danger {
+  color: #D8000C;
+  background-color: #FFBABA;
+  border: 1px solid #D8000C;
+}
+
+.markdown-body .question {
+  color: #00049b;
+  background-color: #BDC8F8;
+  border: 1px solid #00049b;
+}
+
+.markdown-body .note {
+  color: #9F6000;
+  background-color: #FEEFB3;
+  border: 1px solid #9F6000;
+}
+
+.markdown-body .attention {
+  color: #4F8A10;
+  background-color: #DFF2BF;
+  border: 1px solid #4F8A10;
+}
+
+.markdown-body .caution blockquote {
+  color: rgba(214, 51, 1, .5);
+  border-left: 4px solid rgba(214, 51, 1, .5);
+}
+
+.markdown-body .hint blockquote {
+  color: rgba(0, 82, 155, .5);
+  border-left: 4px solid rgba(0, 82, 155, .5);
+}
+
+.markdown-body .danger blockquote {
+  color: rgba(216, 0, 12, .5);
+  border-left: 4px solid rgba(216, 0, 12, .5);
+}
+
+.markdown-body .question blockquote {
+  color: rgba(0, 4, 155, .5);
+  border-left: 4px solid rgba(0, 4, 155, .5);;
+}
+
+.markdown-body .note blockquote {
+  color: rgba(159, 96, 0, .5);
+  border-left: 4px solid rgba(159, 96, 0, .5);
+}
+
+.markdown-body .admonition-icon:before {
+  content: "\f040\00a0";
+}
+
+.markdown-body .attention > .admonition-icon:before {
+  content: "\f058\00a0";
+}
+
+.markdown-body .caution > .admonition-icon:before {
+  content: "\f06a\00a0";
+}
+
+.markdown-body .hint > .admonition-icon:before {
+  content: "\f05a\00a0";
+}
+
+.markdown-body .danger > .admonition-icon:before {
+  content: "\f056\00a0";
+}
+
+.markdown-body .question > .admonition-icon:before {
+  content: "\f059\00a0";
+}
+
+.markdown-body .note > .admonition-icon:before {
+  content: "\f040\00a0";
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #F8F8F8;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  border-right: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #34c2e3;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 53%, rgba(255, 255, 255, .4) 53%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 53%, rgba(255, 255, 255, .4) 53%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 53%, rgba(255, 255, 255, .4) 53%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 53%, rgba(255, 255, 255, .4) 53%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 53%, rgba(255, 255, 255, .4) 53%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #1ee038;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #86e01e;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #f2d31b;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #f2b01e;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #f27011;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #f63a0f;
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset -1px 1px 0 rgba(255, 255, 255, .5),
+    inset 0 -4px 12px rgba(255, 255, 255, .7),
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05),
+    inset 1px -1px 0 rgba(255, 255, 255, .2);
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    box-shadow: none;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+.fifteenMin {
+	height: 75px;
+}
+.twentyMin {
+	height: 100px;
+}
+.thirtyMin {
+	height: 150px;
+}
+.fortyFiveMin {
+	height: 225px;
+}
+.sixtyMin {
+	height: 300px;
+}
+.ninetyMin {
+	height: 450px;
+}
+div.title, td.title, div.competition, div.show {
+	font-weight: bold;
+	text-align: center;
+	text-shadow: 2px 2px #CFCFCF;
+}
+div.presenter {
+	font-style: italic;
+	text-align: center;
+}
+td.empty {
+	text-align: center;
+	/*background-color: #f0f0f0;*/
+	/*color: Black;*/
+	color: #D0D0D0;
+}
+td.break {
+	text-align: center;
+	font-weight: bold;
+	/*background-color: #f0f0f0;*/
+	text-shadow: 2px 2px #CFCFCF;
+}
+#ibm_td_oziel {}
+#ibm_td_bigdata {
+	background: url('images/System Icons/Analytics/Smarter_Planet_Analytics_Icon_140.png') no-repeat right bottom;
+	background-size: 2em;}
+#ibm_td_pnl {
+	background: url('images/System Icons/Education/Smarter_Planet_Education_Icon_140.png') no-repeat right bottom;
+	background-size: 2em;}
+#ibm_td_automation {}
+#ibm_td_openstack {
+	background: url('images/System Icons/Cloud_Computing/Smarter_Planet_Cloud_Computing_Icon_140.png') no-repeat right bottom;
+	background-size: 2em;}
+#ibm_td_db2_blu {
+	background: url('images/System Icons/Analytics/Smarter_Planet_Analytics_Icon_140.png') no-repeat right bottom;
+	background-size: 2em;}
+#ibm_td_clojure {
+	background: url('http://upload.wikimedia.org/wikipedia/en/1/1d/Clojure_logo.gif') no-repeat right bottom;
+	background-size: 2em;}
+#ibm_td_smarter_planet {
+	background: url('images/System Icons/Products/Smarter_Planet_Products_Icon_140.png') no-repeat right bottom;
+	background-size: 2em;}
+#ibm_td_angular {
+	background: url('images/angularjs-logo-trans.png') no-repeat right bottom;
+	background-size: 2em;}
+#ibm_td_machinelearning {
+	background: url('images/System Icons/Analytics/Smarter_Planet_Analytics_Icon_140.png') no-repeat right bottom;
+	background-size: 2em;}
+#ibm_td_kepner_tregoe {
+	background: url('images/System Icons/Business_IT_Services_Sourcing/Smarter_Planet_Business_IT_Services_Icon_140.png') no-repeat right bottom;
+	background-size: 2em;}
+#ibm_td_testing {}
+#ibm_td_power_kvm {
+	background: url('images/System Icons/Cloud_Computing/Smarter_Planet_Cloud_Computing_Icon_140.png') no-repeat right bottom;
+	background-size: 2em;}
+#ibm_td_analyticscareer {
+	background: url('images/System Icons/Analytics/Smarter_Planet_Analytics_Icon_140.png') no-repeat right bottom;
+	background-size: 2em;}
+#ibm_td_ux {}
+#ibm_td_management {}
+#ibm_td_typography {}
+#ibm_td_fama {
+	background: url('images/System Icons/Analytics/Smarter_Planet_Analytics_Icon_140.png') no-repeat right bottom;
+	background-size: 2em;}
+#ibm_td_pomodoro {}
+#ibm_td_rational {}
+#ibm_td_watson {
+	background: url('images/System Icons/Watson/Smarter_Planet_Watson_Icon_140.png') no-repeat right bottom;
+	background-size: 2em;}
+#ibm_td_cd {}
+#ibm_td_camss {
+	background: url('images/System Icons/Mobile/Smarter_Planet_Mobile_Icon_140.png') no-repeat right bottom;
+	background-size: 2em;}
+#ibm_td_tlc {}
+#ibm_td_docker {
+	background: url('images/docker.png'), url('http://upload.wikimedia.org/wikipedia/commons/8/87/Vagrant.png');
+	background-repeat: no-repeat, no-repeat;
+	background-position: right bottom, 8em bottom;
+	background-size: 3.25em, 2em;}
+#ibm_td_rubik {
+	background: url('http://upload.wikimedia.org/wikipedia/commons/a/a6/Rubik%27s_cube.svg') no-repeat right bottom;
+	background-size: 2em;}
+#banda {
+	background: url('images/Pictograms_jpgs_whitebackground/Music.jpg') no-repeat right bottom;
+	background-size: 2em;}
+}
+#coffe {
+	background: url('https://openclipart.org/people/CrazyTerabyte/1294538687.svg') no-repeat right bottom;
+	background-size: 2em;}
+</style>
+	</head>
+	<body>
+		<article class="markdown-body">
+		<header>
+			<h1 class="logo">
+				<a href="#"><img src="images/logo_techday.png" alt="TechDay Logo"/></a>
+			</h1>
+		</header>
+		<section id="agenda">
+			<h2>Agenda, 9 Outubro de 2014 (Quinta-feira)</h2>
+			
+			<table id='schedule' style="width:100%" border="1">
+				<thead>
+				<col style="min-width: 6%; max-width: 5em">
+				<col style="min-width: 6%; max-width: 5em">
+				<col style="min-width: 22.5%; max-width: 25%">
+				<col style="min-width: 22.5%; max-width: 25%">
+				<col style="min-width: 22.5%; max-width: 25%">
+				<col style="min-width: 22.5%; max-width: 25%">
+				<tr>
+					<th>In&iacute;cio</th>
+					<th>Fim</th>
+					<th>Audit&oacute;rio</th>
+					<th>Shimomoto (Sala&nbsp;201)</th>
+					<th>Rosana (Sala&nbsp;203)</th>
+					<th>Patr&iacute;cia/Helena (Sala&nbsp;225)</th>
+				</tr>
+				</thead>
+				<tbody>
+<tr class='thirtyMin'>
+<td class='start'>09:00</td>
+<td class='end'>09:30</td>
+<td class='title'>Abertura</td>
+<td class='empty'>&mdash;</td>
+<td class='empty'>&mdash;</td>
+<td class='empty'>&mdash;</td>
+</tr>
+<tr class='fortyFiveMin'>
+<td class='start'>09:40</td>
+<td class='end'>10:25</td>
+<td id='ibm_td_oziel'><div class='title'>The Evolution Enterprise Application Architecture</div><div class='presenter'>Oziel Moreira Neto</div></td>
+<td id='ibm_td_bigdata'><div class='title'>Time is Money and so is data: An analysis of the long-term retention of Big Data</div><div class='presenter'>Phillip Viana</div></td>
+<td id='ibm_td_pnl'><div class='title'>Programa&ccedil;&atilde;o Neurolingu&iacute;stica: Hipinose</div><div class='presenter'>Grazielle Codogno</div></td>
+<td id='ibm_td_automation'><div class='title'>Automation for Beginners / Tips for Experts</div><div class='presenter'>Alessandra Lima</div></td>
+</tr>
+<tr class='fortyFiveMin'>
+<td class='start'>10:35</td>
+<td class='end'>11:20</td>
+<td id='ibm_td_openstack'><div class='title'>Openstack: Conhe&ccedil;a a nuvem por dentro</div><div class='presenter'>Mauro Rodrigues</div></td>
+<td id='ibm_td_db2_blu'><div class='title'>Columnar Analytics with IBM DB2 BLU</div><div class='presenter'>Eluizio Barretto</div></td>
+<td id='ibm_td_clojure'><div class='title'>Functional Programming on the JVM with Clojure &ndash; Lab&nbsp;UK</div><div class='presenter'>Thomas van der Veen</div></td>
+<td id='ibm_td_smarter_planet'><div class='title'>Smarter Planet: Solu&ccedil;&atilde;o Sustent&aacute;vel para Pr&eacute;dios Inteligentes</div><div class='presenter'>Bruno Garcia e Gustavo Cardoso</div></td>
+</tr>
+<tr class='ninetyMin'>
+<td class='start'>11:30</td>
+<td class='end'>13:00</td>
+<td class='break' colspan="4">Lunch/Almo&ccedil;o</td>
+<!-- <td class='empty'>&mdash;</td>
+<td class='empty'>&mdash;</td>
+<td class='empty'>&mdash;</td> -->
+</tr>
+<tr class='fortyFiveMin'>
+<td class='start'>13:00</td>
+<td class='end'>13:45</td>
+<td id='ibm_td_angular'><div class='title'>Introdu&ccedil;&atilde;o a Bootstrap e AngularJS</div><div class='presenter'>Alexandre Quinteiro, Marcelo Blechner e Leucir Marin
+</div></td>
+<td id='ibm_td_machinelearning'><div class='title'>Aprendizado de M&aacute;quina</div><div class='presenter'>Thiago Bianchi</div></td>
+<td id='ibm_td_kepner_tregoe'><div class='title'>Kepner-Tregoe (KT)</div><div class='presenter'>Renato Barbieri</div></td>
+<td id='ibm_td_testing'><div class='title'>Panel: What is the future of Software Testing?</div><div class='presenter'>Helena Corelli</div></td>
+</tr>
+<tr class='fifteenMin'>
+<td class='start'>13:55</td>
+<td class='end'>14:10</td>
+<td id='ibm_td_power_kvm'><div class='title'>Power KVM</div><div class='presenter'>Murilo Opsfelder</div></td>
+<td id='ibm_td_analyticscareer'><div class='title'>Big Data needs Big Analytics</div><div class='presenter'>Rog&eacute;rio Barbosa</div></td>
+<td id='ibm_td_ux'><div class='title'>How is on the Head, What is on the Heart! 15 min may change your mind</div><div class='presenter'>Diego Duarte Moreira</div></td>
+<td id='ibm_td_management'><div class='title'>Carreira Gerencial</div><div class='presenter'>Cleber Neumann</div></td>
+</tr>
+<tr class='fifteenMin'>
+<td class='start'>14:20</td>
+<td class='end'>14:35</td>
+<td id='ibm_td_typography'><div class='title'>Typography</div><div class='presenter'>Leandro Cassa</div></td>
+<td id='ibm_td_fama'><div class='title'>Social Trending Analytics - FAMA</div><div class='presenter'>Maisa Aparecida Penha Gemignani</div></td>
+<td id='ibm_td_pomodoro'><div class='title'>Gerenciamento de Tempo (Pomodoro)</div><div class='presenter'>Rafael Sene</div></td>
+<td id='ibm_td_rational'><div class='title'>Porque usar o Rational Clear Case?</div><div class='presenter'>Marcio Jacinto Albernaz</div></td>
+</tr>
+<tr class='fortyFiveMin'>
+<td class='start'>14:45</td>
+<td class='end'>15:30</td>
+<td id='ibm_td_watson'><div class='title'>Watson</div><div class='presenter'>F&aacute;bio Scopeta Rodrigues</div></td>
+<td class='empty'>&mdash;</td>
+<td class='empty'>&mdash;</td>
+<td id='ibm_td_cd'><div class='title'>Implementando Continuous Delivery</div><div class='presenter'>Rodrigo Braga</div></td>
+</tr>
+<tr class='thirtyMin'>
+<td class='start'>15:30</td>
+<td class='end'>16:00</td>
+<!-- <td class='empty'>&mdash;</td> -->
+<td id='coffe' class='break' colspan="4">Coffe Break</td>
+<!-- <td class='empty'>&mdash;</td>
+<td class='empty'>&mdash;</td> -->
+</tr>
+<tr class='fortyFiveMin'>
+<td class='start'>16:00</td>
+<td class='end'>16:45</td>
+<td id='ibm_td_camss'><div class='title'>O valor estrat&eacute;gico de CAMSS para as empresas e como a mobilidade mudou todas as regras do jogo</div><div class='presenter'>Avi Alkalay &ndash; TLC</div></td>
+<td class='empty'>&mdash;</td>
+<td id='ibm_td_tlc'><div class='title'>Import&acirc;ncia de participar do TLC na carreira t&eacute;cnica</div><div class='presenter'>Agostinho de Arruda Villela &ndash; TLC</div></td>
+<td id='ibm_td_docker'><div class='title'>Virtualization in a DevOps Era</div><div class='presenter'>Marco Shimomoto</div></td>
+</tr>
+<tr class='twentyFiveMin'>
+<td class='start'>16:50</td>
+<td class='end'>17:10</td>
+<td><div class='presentation'><div class='title'>Encerramento e Sorteio de Brindes</div><div class='presenter'>(Guarde o seu Tech Card!!!)</div></td>
+<td class='empty'>&mdash;</td>
+<td class='empty'>&mdash;</td>
+<td class='empty'>&mdash;</td>
+</tr>
+<tr class='thirtyMin'>
+<td class='start'>17:10</td>
+<td class='end'>17:40</td>
+<td id='ibm_td_rubik'><div class='title'>Intelig&ecirc;ncia e Estrat&eacute;gias de Cubo M&aacute;gico</div><div class='presenter'>Rafael Cinoto</div></td>
+<td class='empty'>&mdash;</td>
+<td class='empty'>&mdash;</td>
+<td class='empty'>&mdash;</td>
+</tr>
+<tr class='twentyMin'>
+<td class='start'>17:40</td>
+<td class='end'>18:00</td>
+<td><div class='competition'>Concurso!!! Traga seu cubo m&aacute;gico</div></td>
+<td class='empty'>&mdash;</td>
+<td class='empty'>&mdash;</td>
+<td class='empty'>&mdash;</td>
+</tr>
+<tr class='sixtyMin'>
+<td class='start'>18:00</td>
+<td class='end'>19:00</td>
+<td id='banda'><div class='show'>Banda</div></td>
+<td class='empty'>&mdash;</td>
+<td class='empty'>&mdash;</td>
+<td class='empty'>&mdash;</td>
+</tr>
+				</tbody>
+			</table>
+		<section id="organizacao">
+			<a name="organizacao">
+				<h2 class="icon-header icon-staff">Organiza&ccedil;&atilde;o</h2>
+			</a>
+			<ol class="staff">
+			<table style="width:100%">
+			<tr align = center>
+				<td>
+					<figure>
+						<a href="http://faces.tap.ibm.com/#Grazielle%20Guimaraes%20Codogno">
+							<img src="images/grazi.codogno.jpg" alt="Grazielle Guimaraes Codogno">
+							<figcaption>Grazielle Guimaraes Codogno</figcaption>
+						</a>
+					</figure>
+				</td>
+				<td>
+					<figure>
+						<a href="http://faces.tap.ibm.com/#Leonardo%20Cavalcante%20Alvino">
+							<img src="images/lalvino.jpg" alt="Leonardo Cavalcante Alvino">
+							<figcaption>Leonardo Cavalcante Alvino</figcaption>
+						</a>
+					</figure>
+				</td>
+				<td>
+					<figure>
+						<a href="http://faces.tap.ibm.com/#Lucas%20Pereira%20Diogo">
+							<img src="images/ldiogo.jpg" alt="Lucas Pereira Diogo">
+							<figcaption>Lucas Pereira Diogo</figcaption>
+						</a>
+					</figure>
+				</td>
+				<td>
+					<figure>
+						<a href="http://faces.tap.ibm.com/#Marco%20Aurelio%20de%20M%20Shimomoto">
+							<img src="images/marcoa.jpg" alt="Marco Aurelio de M Shimomoto">
+							<figcaption>Marco Aurelio de M Shimomoto</figcaption>
+						</a>
+					</figure>
+				</td>
+				</tr>
+				<tr align = center>
+				<td>
+					<figure>
+						<a href="http://faces.tap.ibm.com/#Maria%20Ane%20Dias">
+							<img src="images/mariaane.jpg" alt="Maria Ane Dias">
+							<figcaption>Maria Ane Dias</figcaption>
+						</a>
+					</figure>
+				</td>
+				<td>
+					<figure>
+						<a href="http://faces.tap.ibm.com/#Natalia%20Araujo%20Santos">
+							<img src="images/naraujos.jpg" alt="Natalia Araujo Santos">
+							<figcaption>Natalia Araujo Santos</figcaption>
+						</a>
+					</figure>
+				</td>
+				<td>
+					<figure>
+						<a href="http://faces.tap.ibm.com/#Patricia%20Yuriko%20Yamashita">
+							<img src="images/pyuriko.jpg" alt="Patricia Yuriko Yamashita">
+							<figcaption>Patricia Yuriko Yamashita</figcaption>
+						</a>
+					</figure>
+				</td>
+				<td>
+					<figure>
+						<a href="http://faces.tap.ibm.com/#Patrick%20Silva%20Zangirolame">
+							<img src="images/patrickz.jpg" alt="Patrick Silva Zangirolame">
+							<figcaption>Patrick Silva Zangirolame</figcaption>
+						</a>
+					</figure>
+				</td>
+				</tr>
+				<tr align = center>
+				<td>
+					<figure>
+						<a href="http://faces.tap.ibm.com/#Pedro%20Solfa%20Spadacini">
+							<img src="images/psolfa.jpg" alt="Pedro Solfa Spadacini">
+							<figcaption>Pedro Solfa Spadacini</figcaption>
+						</a>
+					</figure>
+				</td>
+				<td>
+					<figure>
+						<a href="http://faces.tap.ibm.com/#Rosana%20Monteiro%20Fagundes">
+							<img src="images/romf.jpg" alt="Rosana Monteiro Fagundes">
+							<figcaption>Rosana Monteiro Fagundes</figcaption>
+						</a>
+					</figure>
+				</td>
+				<td>
+					<figure>
+						<a href="http://faces.tap.ibm.com/#Tarcisio%20Pereira">
+							<img src="images/tpereira.jpg" alt="Tarcisio Pereira">
+							<figcaption>Tarcisio Pereira</figcaption>
+						</a>
+					</figure>
+				</td>
+				<td>
+					<figure>
+						<a href="http://faces.tap.ibm.com/#Vasti%20Marucci%20Viana">
+							<img src="images/vmarucci.jpg" alt="Vasti Marucci Viana">
+							<figcaption>Vasti Marucci Viana</figcaption>
+						</a>
+					</figure>
+				</td>
+				</tr>
+				</table>
+			</ol>
+		</section>
+	</section>
+	</article>
 </html>
